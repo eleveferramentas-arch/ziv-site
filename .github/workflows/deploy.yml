@@ -36,6 +36,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:timeout 60;
             set net:max-retries 3;
+            open -u ${{ secrets.FTP_USERNAME }},'${{ secrets.FTP_PASSWORD }}' -p 65002 sftp://${{ secrets.FTP_SERVER }};
             mirror --reverse --verbose ./dist/ /home/u175636768/domains/tudoeleve.com.br/public_html/ziv-site/;
             quit
-          " sftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_SERVER }}:65002
+          "
