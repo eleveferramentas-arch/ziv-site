@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: domains/tudoeleve.com.br/public_html/ziv-site/
+          server-dir: ziv-site/
           protocol: ftp
           port: 21
           # Garante que ele substitua o que estiver lá e mostre tudo no log
