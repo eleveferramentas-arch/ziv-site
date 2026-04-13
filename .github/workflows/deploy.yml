@@ -1,4 +1,4 @@
-name: 🚀 Build and Deploy ZIV (Reset)
+name: 🚀 Build and Deploy ZIV (SFTP)
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   web-deploy:
-    name: 🏗️ Build & 📂 Deploy
+    name: 🏗️ Build & 📂 Deploy via SFTP
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
@@ -26,20 +26,16 @@ jobs:
 
       - name: 🔍 Verify Build Output
         run: |
-          echo "Conteúdo da pasta dist:"
+          echo "=== Conteúdo da pasta dist ==="
           ls -R ./dist
 
-      - name: 📂 Sync files (FTP)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: ziv-site/
-          protocol: ftp
-          port: 21
-          # Garante que ele substitua o que estiver lá e mostre tudo no log
-          log-level: verbose
-          # Tenta manter a conexão aberta para arquivos maiores
-          timeout: 60000
+      - name: 📂 Deploy via SFTP (SSH)
+        run: |
+          sudo apt-get install -y lftp
+          lftp -e "
+            set sftp:auto-confirm yes;
+            set net:timeout 60;
+            set net:max-retries 3;
+            mirror --reverse --verbose ./dist/ /home/u175636768/domains/tudoeleve.com.br/public_html/ziv-site/;
+            quit
+          " sftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_SERVER }}:65002
