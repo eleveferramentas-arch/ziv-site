@@ -25,6 +25,9 @@ jobs:
       - name: 🏗️ Build Project
         run: npm run build
 
+      - name: 🔍 Check built files
+        run: ls -la ./dist
+
       - name: 📂 Sync files (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -32,7 +35,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ziv-site/
+          server-dir: ./
           protocol: ftp
           port: 21
           log-level: verbose
