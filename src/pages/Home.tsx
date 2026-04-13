@@ -33,7 +33,7 @@ export default function Home() {
 
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '800px' }} className="md:px-24">
           <h1 className="display-lg" style={{ marginBottom: '1.5rem', color: 'var(--on-surface)' }}>
-            A certeza do destino e o respeito ao seu tempo
+            A certeza do destino e o respeito ao seu tempo.
           </h1>
           <p className="headline-md" style={{ 
             color: 'var(--on-surface-variant)', 
