@@ -51,7 +51,7 @@ export default function ZivApp() {
       <section className="section-padding" style={{ backgroundColor: '#000000' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div style={{ marginBottom: '4rem' }}>
-            <span className="label-sm" style={{ color: 'var(--primary-container)', tracking: '0.2em' }}>Engenharia de Experiência</span>
+            <span className="label-sm" style={{ color: 'var(--primary-container)', letterSpacing: '0.2em' }}>Engenharia de Experiência</span>
             <h2 className="display-lg" style={{ fontSize: '2.5rem', marginTop: '0.5rem' }}>O Interior como Santuário</h2>
           </div>
           

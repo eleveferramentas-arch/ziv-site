@@ -55,14 +55,14 @@ export default function QueroDirigir() {
           gap: '1.5rem' 
         }}>
           {/* Card 1: Volatilidade Chart */}
-          <div className="bento-card" style={{ 
+          <div className="bento-card md:col-span-12 lg:col-span-7" style={{ 
             gridColumn: 'span 12', 
             gridRow: 'span 1', 
             display: 'flex', 
             flexDirection: 'column', 
             justifyContent: 'space-between',
             minHeight: '400px'
-          }} className="md:col-span-12 lg:col-span-7">
+          }}>
             <div>
               <h3 className="title-sm" style={{ fontSize: '1.5rem' }}>O Fim da Volatilidade</h3>
               <p className="body-md" style={{ color: 'var(--on-surface-variant)', fontSize: '0.875rem' }}>Compare o custo energético mensal entre combustível fóssil e ZIV Elétrico.</p>
@@ -87,14 +87,14 @@ export default function QueroDirigir() {
           </div>
 
           {/* Card 2: Matemática Calculator */}
-          <div className="bento-card" style={{ 
+          <div className="bento-card md:col-span-12 lg:col-span-5" style={{ 
             gridColumn: 'span 12', 
             gridRow: 'span 1', 
             display: 'flex', 
             flexDirection: 'column', 
             justifyContent: 'center',
             gap: '1.5rem'
-          }} className="md:col-span-12 lg:col-span-5">
+          }}>
             <span className="material-symbols-outlined" style={{ color: 'var(--primary-container)', fontSize: '3rem' }}>calculate</span>
             <h3 className="title-sm" style={{ fontSize: '1.5rem' }}>A Matemática da Certeza</h3>
             <p className="body-md" style={{ color: 'var(--on-surface-variant)', fontSize: '0.875rem', lineHeight: 1.6 }}>
@@ -103,7 +103,7 @@ export default function QueroDirigir() {
           </div>
 
           {/* Card 3: Lucro Massivo (Full Width) */}
-          <div className="bento-card" style={{ 
+          <div className="bento-card md:col-span-12" style={{ 
             gridColumn: 'span 12', 
             display: 'flex', 
             flexDirection: 'column', 
@@ -111,7 +111,7 @@ export default function QueroDirigir() {
             justifyContent: 'center',
             textAlign: 'center',
             padding: '4rem 2rem'
-          }} className="md:col-span-12">
+          }}>
             <span className="label-sm" style={{ opacity: 0.5, marginBottom: '1rem' }}>Lucro Real e Dignidade</span>
             <div style={{ 
               fontSize: 'clamp(3.5rem, 10vw, 7rem)', 
